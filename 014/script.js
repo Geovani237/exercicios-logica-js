@@ -1,29 +1,26 @@
-/*
-Fracionário salario_hora, salario_bruto, valor_sindicato, sindicato, valor_inss, inss, valor_ir, ir, salario_liquido;
-	Inteiro horas_mes;
+function salario(hora,horas_trabalhadas){
+let salario
+let ir
+let inss
+let sindicato
+let salario_liquido
 
-	Escreva("Vamos saber quando você ganha no mês");
-	Escreva("Informe quanto você ganha por hora:");
-	Leia(salario_hora);
-	Escreva("Quantas horas você trabalha no mês:");
-	Leia(horas_mes);
-						
-	ir = 11;
-	inss = 8;
-	sindicato = 5;
-	
-	salario_bruto = salario_hora * horas_mes ;
-	
-	valor_ir = ir / 100 * salario_bruto;
-	valor_inss = inss / 100 * salario_bruto;
-	valor_sindicato = sindicato / 100 * salario_bruto;
-	
-	salario_liquido = salario_bruto - valor_ir - valor_inss - valor_sindicato;
+console.log("Quanto você ganha por hora")
+console.log("Quantas horas você trabalha por mês")
 
-	Escreva("+ Salário Bruto : R$ ", salario_bruto);
-	Escreva("- IR (11%) : R$ ", valor_ir);
-	Escreva("- INSS (8%) : R$ ", valor_inss);
-	Escreva("- Sindicato (5%) : R$ ", valor_sindicato);
-	Escreva("= Salário Liquido : R$ ", salario_liquido);
-Fim
-*/
+
+salario = hora * horas_trabalhadas
+ir = salario * (11/100)
+inss = salario * (8/100)
+sindicato = salario * (5/100)
+salario_liquido = salario - ir - inss - sindicato
+
+console.log("+ Salário Bruto : R$", salario)
+console.log("- IR (11%) : R$" , ir)
+console.log("- INSS (8%) : R$", inss)
+console.log("- Sindicato ( 5%) : R$" , sindicato)
+console.log("= Salário Liquido : R$" , salario_liquido)
+
+}
+salario(13,120)
+

@@ -1,26 +1,22 @@
-function salario(hora,horas_trabalhadas){
-let salario
-let ir
-let inss
-let sindicato
-let salario_liquido
+function calcularSalario(){
+    let salarioBruto, salarioLiquido, inss, sindicato, impostoRenda
 
-console.log("Quanto você ganha por hora")
-console.log("Quantas horas você trabalha por mês")
+    salarioBruto = document.querySelector('#salario_bruto').value
+    salarioBruto = parseFloat(salarioBruto)
+    
+    inss = salarioBruto * 8/100
+    sindicato = salarioBruto * 5/100
+    impostoRenda = salarioBruto * 11/100
+    salarioLiquido = salarioBruto - inss - sindicato - impostoRenda
 
-
-salario = hora * horas_trabalhadas
-ir = salario * (11/100)
-inss = salario * (8/100)
-sindicato = salario * (5/100)
-salario_liquido = salario - ir - inss - sindicato
-
-console.log("+ Salário Bruto : R$", salario)
-console.log("- IR (11%) : R$" , ir)
-console.log("- INSS (8%) : R$", inss)
-console.log("- Sindicato ( 5%) : R$" , sindicato)
-console.log("= Salário Liquido : R$" , salario_liquido)
+    document.querySelector("#resultado").innerHTML= "Salario Bruto: R$ " + salarioBruto
+    document.querySelector("#resultado").innerHTML+= "<br>"
+    document.querySelector("#resultado").innerHTML+= "INSS (8%): R$ " + inss
+    document.querySelector("#resultado").innerHTML+= "<br>"
+    document.querySelector("#resultado").innerHTML+= "Sindicato (5%): R$ " + sindicato
+    document.querySelector("#resultado").innerHTML+= "<br>"
+    document.querySelector("#resultado").innerHTML+= "Imposto de Renda (11%): R$ " + impostoRenda
+    document.querySelector("#resultado").innerHTML+= "<br>"
+    document.querySelector("#resultado").innerHTML+= "Salário Líquido: R$ " + salarioLiquido
 
 }
-salario(13,120)
-

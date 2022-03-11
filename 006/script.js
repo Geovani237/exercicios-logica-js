@@ -1,14 +1,11 @@
-function area(raio){
-    //Fracionário raio;
-    //Fracionário area;
+function area(raio = 0){
+ 
     let area
+    raio = parseFloat(raio)
 
-    //Escreva("Vamos descobrir  a área de um circulo, digite seu raio");
-    console.log("Vamos descobrir a área de um circulo, digite seu raio")
-    //Leia(raio);
-    //area = 3,14 * raio * raio ;
+    document.querySelector("#resultado").innerHTML="Vamos descobrir a área de um circulo, digite seu raio" + raio
+    
     area = (3.14 * raio * raio)
-    //Escreva ("A área do circulo é =", area);
-    console.log("A área do circulo é =", area)
+    
+    document.querySelector("#resultado").innerHTML ="A área do circulo é =" + area
 }
-area(3)
